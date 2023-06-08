@@ -9,31 +9,31 @@ import Testimonial from '../testimonial/Testimonial';
 
 export default function Home() {
 
-const [showPop, setshowPop] = useState(false);
+  const [showPop, setshowPop] = useState(false);
 
-  
+
   return (
 
     <>
-{
-  showPop===true?
-      <div className="popup">
-        <div className="container">
-          <div className="wrapper">
-            <img src={assistent} alt="" />
-            <div id="popup_title">
-              <h1>Are you aspiring to crack the <span> GATE exam in 2025</span>? For Electrical Engineering or
-                Mechanical Engineering</h1>
-              <h3>GATE infinite brings you a program that offers Flexibility, quality teaching &amp;
-                access to top-notch resources.</h3>
+      {
+        showPop === true ?
+          <div className="popup">
+            <div className="container">
+              <div className="wrapper">
+                <img src={assistent} alt="" />
+                <div id="popup_title">
+                  <h1>Are you aspiring to crack the <span> GATE exam in 2025</span>? For Electrical Engineering or
+                    Mechanical Engineering</h1>
+                  <h3>GATE infinite brings you a program that offers Flexibility, quality teaching &amp;
+                    access to top-notch resources.</h3>
+                </div>
+                <button id='talk-btn'>Talk to Our Counsellor</button>
+                <button id='x-btn' onClick={() => setshowPop(false)}>X</button>
+              </div>
             </div>
-            <button id='talk-btn'>Talk to Our Counsellor</button>
-            <button id='x-btn' onClick={()=>setshowPop(false)}>X</button>
-          </div>
-        </div>
-      </div>:
-      <></>
-    }
+          </div> :
+          <></>
+      }
 
 
 
@@ -60,7 +60,12 @@ const [showPop, setshowPop] = useState(false);
         </div>
 
       </div>
-
+      {/* <div id="show_subtitle_onMobile">
+        <h4>Prepare for GATE the Infinite way &amp; get the AIR you
+          deserve.
+          With our expert guidance and proven teaching methodology, you can
+          achieve remarkable results &amp; open doors to unlimited opportunities.</h4>
+      </div> */}
 
 
 

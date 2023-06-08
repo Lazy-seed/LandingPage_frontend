@@ -6,7 +6,6 @@
 
     @include mobile {
         margin-top: 30px;
-
     }
 
     h1 {
@@ -14,16 +13,20 @@
     }
 
     .container {
-
+       
+        
+        
         .wrapper {
             ul {
                 list-style: none;
                 display: flex;
                 justify-content: center;
-
+                @include mobile {
+                    flex-direction: column;
+                    align-items: center;
+                }
 
                 li {
-                    // background: rgb(255, 167, 167);
                     height: 200px;
                     width: 250px;
                     display: flex;
@@ -31,6 +34,7 @@
                     align-items: center;
                     flex-direction: column;
                     margin: 10px;
+                    
 
                     #img-div {
                         width: 110px;

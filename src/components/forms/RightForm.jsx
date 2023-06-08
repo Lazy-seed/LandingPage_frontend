@@ -96,6 +96,7 @@ export default function RightForm() {
 
               <div id="OTP" >
                 <h3>OTP has been sent to your email   </h3>
+                <h3 style={{textDecorationLine:'underline',color:'green',fontWeight:'400'}}> {email} </h3>
                 {/* <input type="text" placeholder='xxxxxx' onChange={(e) => { setnew_otp(e.target.value) }} /> */}
                 <div className="otp_box">
                   <input type="text" id='ist' maxLength="1" onKeyUp={(e) => { clickEvent(e.target.value, 'sec') }} />
@@ -189,6 +190,7 @@ export default function RightForm() {
 
 
     const data = { email, Gen_OTP }
+    // const result = axios.post('http://localhost:8000/api/sndOTP', data, { withCredentials: true }).then((res) => {
     const result = axios.post('https://landingpage77-backend.onrender.com/api/sndOTP', data, { withCredentials: true }).then((res) => {
       console.log(res.data);
       res.data.success === true ? setshowForm(false) : setshowForm(true);

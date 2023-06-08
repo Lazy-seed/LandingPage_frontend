@@ -116,6 +116,7 @@
             font-weight: 500;
             padding: 5px 10px;
             margin: 10px;
+            outline: none;
 
             @include laptop {
                 height: 25px;
@@ -128,14 +129,17 @@
             @include mobile {
                 height: 25px;
             }
+            &:focus{
+                // border:  1px solid ;
+                box-shadow: 0 0 5px #702FA0;
+                border: 1px solid #702FA0;
+            }
 
         }
 
         #name {
             input {
                 width: 35%;
-
-
             }
         }
 
@@ -260,7 +264,7 @@
         }
 
         h6 {
-            margin-top: 5px;
+            margin-top: 20px;
             font-size: 15px;
             color: red;
             text-align: center;
@@ -321,6 +325,10 @@
                 color: white;
                 letter-spacing: 1px;
                 border: 1px white solid;
+                &:hover {
+                    background: #a03ae9;
+
+                }
             }
         }
     }

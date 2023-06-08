@@ -37,6 +37,7 @@ export default function RightForm() {
       {showForm === true && user_added === false ?
 
         <form >
+          <h6 id='error_msg'>Enter all fields</h6>
           <div id="name">
             <h3>Name </h3>
             <input type="text" placeholder='First Name' onChange={(e) => { setFname(e.target.value) }} id='F_email' />
@@ -106,7 +107,7 @@ export default function RightForm() {
 
               </div>
               <div id="btn">
-                <h5 id='error_otp_msg' style={{color:'red'}}></h5>
+                <h5 id='error_otp_msg' style={{ color: 'red' }}></h5>
                 <button onClick={addUser}>Confirm </button>
               </div>
             </div>
@@ -130,32 +131,50 @@ export default function RightForm() {
 
 
     //  is value is empty  
-    if (Fname.trim() === '' || Lname.trim() === '' || email.trim() === '' || contact.trim() === '' || branch.trim() === '' || GateYear.trim() === '') {
+    if (Fname.trim() === '' || Lname.trim() === '') {
       console.log("fill all values");
       document.getElementById('error_msg').style.opacity = 1;
-      document.getElementById('error_msg').innerText = 'Enter all fields';
+      document.getElementById('error_msg').innerText = 'Enter name';
+      document.getElementById('F_email').style = 'border:1px solid red';
+      document.getElementById('F_email').style.boxShadow = '0 0 5px red';
+      document.getElementById('L_email').style = 'border:1px solid red';
+      document.getElementById('L_email').style.boxShadow = '0 0 5px red';
       return false
     }
+    document.getElementById('F_email').style.border = 'solid 1px rgb(134, 134, 134)';
+    document.getElementById('F_email').style.boxShadow = 'none';
+    document.getElementById('L_email').style.border = 'solid 1px rgb(134, 134, 134)';
+    document.getElementById('L_email').style.boxShadow = 'none';
+
 
     // // check contact
     var phoneno = /^\d{10}$/;
-    if (!(contact.match(phoneno))) {
+    if ((!(contact.match(phoneno))) || contact.trim() === '') {
       console.log("number corect");
       document.getElementById('error_msg').style.opacity = 1;
-      document.getElementById('I_contact').style.border = '1px solid red';
       document.getElementById('error_msg').innerText = 'Invalid contact number';
+      document.getElementById('I_contact').style.border = '1px solid red';
+      document.getElementById('I_contact').style.boxShadow = '0 0 5px red';
+
       return false
     }
+    document.getElementById('I_contact').style.border = 'solid 1px rgb(134, 134, 134)';
+    document.getElementById('I_contact').style.boxShadow = 'none';
+
 
     // check mail
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    if (!(email.match(validRegex))) {
+    if ((!(email.match(validRegex)) || email.trim() === '')) {
       console.log("email not match");
       document.getElementById('error_msg').style.opacity = 1;
-      document.getElementById('I_email').style.border = '1px solid red';
       document.getElementById('error_msg').innerText = 'Invalid email Id';
+      document.getElementById('I_email').style = 'border:1px solid red';
+      document.getElementById('I_email').style.boxShadow = '0 0 5px red';
       return false
     }
+    document.getElementById('I_email').style.border = 'solid 1px rgb(134, 134, 134)';
+    document.getElementById('I_email').style.boxShadow = 'none';
+
 
     // otp generate
     var digits = '0123456789';
@@ -201,15 +220,15 @@ export default function RightForm() {
 
 
     const newTop = a + b + c + d + e;
-    if (a.trim()==='' || b.trim()==='' || c.trim()==='' || d.trim()==='' || e.trim()==='') {
-      document.getElementById('error_otp_msg').innerText="OTP not match"
+    if (a.trim() === '' || b.trim() === '' || c.trim() === '' || d.trim() === '' || e.trim() === '') {
+      document.getElementById('error_otp_msg').innerText = "OTP not match"
       return false
     }
 
 
     if (glob_otp === newTop) {
       const data = { Fname, Lname, email, contact, branch, GateYear }
-  
+
 
       const result = axios.post('http://localhost:8000/api/newUser', data, { withCredentials: true })
         .then((res) => {
@@ -219,7 +238,7 @@ export default function RightForm() {
 
     } else {
 
-      document.getElementById('error_otp_msg').innerText="OTP not match"
+      document.getElementById('error_otp_msg').innerText = "OTP not match"
       return false
     }
 

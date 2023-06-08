@@ -157,9 +157,12 @@ body {
             width: 90vw;
             height: 300px;
         }
-
-
+        
+        
         .wrapper2 {
+            img{
+                width: 150px;
+            }
             height: 100%;
             display: flex;
             flex-direction: column;

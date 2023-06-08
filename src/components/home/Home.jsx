@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './home.scss';
 import img from './img/girl5.png';
 import assistent from './img/assistent.png';
+import success from './img/success.png';
 import RightForm from '../forms/RightForm';
 import Services from '../services/Services';
 import Testimonial from '../testimonial/Testimonial';
@@ -12,6 +13,7 @@ export default function Home() {
 
   const [showPop, setshowPop] = useState(true);
   const [showpopForm, setshowpopForm] = useState(false);
+  const [userAdd, setuserAdd] = useState(false);
   const [Fname, setFname] = useState('')
   const [email, setemail] = useState('')
 
@@ -21,10 +23,10 @@ export default function Home() {
       {
         showPop === true ?
           <div className="popup">
-{/* show from or banner */}
+            {/* show from or banner */}
             (
 
-{showpopForm===false ?    <div className="container">
+            {showpopForm === false ? <div className="container">
               <div className="wrapper">
                 <img src={assistent} alt="" />
                 <div id="popup_title">
@@ -35,26 +37,40 @@ export default function Home() {
                 </div>
                 <button id='talk-btn' onClick={() => setshowpopForm(true)}>Talk to Our Counsellor</button>
                 <button id='x-btn' onClick={() => setshowPop(false)}>X</button>
-              </div> 
-            </div> 
-            :
-            <div className="container2">
-              <div className="wrapper2">
-                <h1>Get an immediate assistance</h1>
-                <div id='name'>
-                  <h2>Name</h2>
-                  <input type="text" onChange={(e) => { setFname(e.target.value) }} id='F_email' />
-                </div>
-                <div id='email'>
-                  <h2>Email</h2>
-                  <input type="text" onChange={(e) => { setemail(e.target.value) }} id='I_email' />
-                </div>
-                <button id='talk-btn' onClick={() => { addUserDirect() }}>Sumbit</button>
-                <button id='x-btn' onClick={() => setshowpopForm(false)}>X</button>
               </div>
             </div>
-             } )
-          
+              :
+              <div className="container2">
+
+
+                <div className="wrapper2">
+
+                  {userAdd === false ? <>
+                    <h1>Get an immediate assistance</h1>
+                    <div id='name'>
+                      <h2>Name</h2>
+                      <input type="text" onChange={(e) => { setFname(e.target.value) }} id='F_email' />
+                    </div>
+                    <div id='email'>
+                      <h2>Email</h2>
+                      <input type="text" onChange={(e) => { setemail(e.target.value) }} id='I_email' />
+                    </div>
+                    <button id='talk-btn' onClick={() => { addUserDirect() }}>Sumbit</button>
+                  </>
+
+                    : <>
+                      <h2>We will contact you asap!</h2>
+                      <img src={success} alt="" />
+                    </>}
+
+                  <button id='x-btn' onClick={() => {setshowpopForm(false); setshowPop(false)}}>X</button>
+
+                </div>
+
+
+              </div>
+            } )
+
           </div> :
           <></>
       }
@@ -146,6 +162,7 @@ export default function Home() {
     axios.post('https://landingpage77-backend.onrender.com/api/newUser', data, { withCredentials: true })
       .then((res) => {
         console.log(res.data)
+        setuserAdd(res.data.success)
 
       })
 

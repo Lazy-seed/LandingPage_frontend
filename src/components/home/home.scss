@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Pangolin&display=swap');
+@import '../../global.scss';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+
+}
+
+body {
+    // background-color: #F1F1F1;
+}
+
+
+
+.popup {
+    background: #00000097;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        background: rgb(252, 83, 17);
+        background: linear-gradient(90deg, rgb(252, 170, 17) 0%, rgba(255, 205, 0, 1) 87%);
+        width: 80vw;
+        border-radius: 5px;
+        border: solid 1px rgb(82, 82, 82);
+
+        @include laptop {
+            width: 90vw;
+        }
+
+        @include tablet {
+            width: 60vw;
+            height: 350px;
+            padding: 20px 0;
+        }
+
+
+
+        .wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: relative;
+            padding: 10px;
+
+            @include tablet {
+                flex-direction: column;
+                height: 100%;
+                justify-content: space-around;
+            }
+
+
+            img {
+                width: 100px;
+            }
+
+            #popup_title {
+                width: 65%;
+                margin-left: 20px;
+
+                @include tablet {
+                    width: 90%;
+                }
+
+                h1 {
+                    font-size: 22px;
+
+                    span {
+                        text-decoration-line: underline;
+                    }
+
+                    @include laptop {
+                        font-size: 20px;
+                    }
+
+                    @include tablet {
+                        font-size: 18px;
+                    }
+                }
+
+                h3 {
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin-top: 7px;
+
+                    @include laptop {
+                        width: 90%;
+                    }
+                }
+
+            }
+
+            #talk-btn {
+                height: 40px;
+                width: 200px;
+                background: none;
+                font-size: 15px;
+                font-weight: 600;
+                border: 3px solid rgb(255, 102, 0);
+                border-radius: 5px;
+            }
+
+            #x-btn {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                border: none;
+                background: none;
+                font-size: 20px;
+                color: #0000008e;
+            }
+        }
+    }
+}
+
+
+.header {
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        padding-top: 20px;
+
+        .container {
+            display: flex;
+            width: 90vw;
+            height: 400px;
+            background-image: url(./img/bg.png);
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 500px;
+            position: relative;
+            border: solid 1px rgb(198, 198, 198);
+            border-radius: 5px;
+            border-radius: 6px 1px 21px 1px rgba(0, 0, 0, 0.4);
+
+            @include tablet {
+                width: 95vw;
+                height: 386px;
+                background-size: 500px;
+
+            }
+
+            @include mobile {
+                width: 95vw;
+                height: 193px;
+                background-size: 250px;
+            }
+
+
+            .left {
+                flex: 60%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                flex-direction: column;
+                padding: 50px 50px;
+
+                @include tablet {
+                    padding: 50px 0px;
+                }
+
+                @include mobile {
+                    flex: 80%;
+                }
+
+
+                h2 {
+                    font-family: 'Lato', sans-serif;
+                    font-size: 40px;
+                    font-weight: 700;
+                    margin-left: 30px;
+
+                    @include tablet {
+                        font-size: 35px;
+                    }
+                    @include mobile {
+                        font-size: 21px;
+                        margin-left: 15px;
+                    }
+                    span {
+                        color: red;
+                    }
+                }
+
+                h4 {
+                    font-family: 'Lato', sans-serif;
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-left: 30px;
+
+                    @include tablet {
+                        font-size: 16px;
+                    }
+
+                    @include mobile {
+                        display: none;
+
+                    }
+
+                }
+
+                button {
+                    position: absolute;
+                    left: 100px;
+                    bottom: 20px;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 800;
+                    font-size: 16px;
+                    padding: 10px;
+                    background: crimson;
+                    color: white;
+                    letter-spacing: 1px;
+                    border: solid 2px white;
+                    border-radius: 10px;
+
+                }
+            }
+
+            .right {
+                flex: 40%;
+                display: flex;
+                justify-content: center;
+
+                @include mobile {
+                    flex: 20%;
+                }
+
+                .right-img {
+                    width: 90%;
+                    height: 128%;
+                    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+                    background-color: crimson;
+
+                    // border-radius: 6px 1px 21px 1px rgba(0, 0, 0, 0.4);
+                    @include laptop {
+                        width: 110%;
+                        height: 100%;
+                    }
+
+                    @include mobile {
+                        width: 100%;
+                        height: 80%;
+                    }
+                }
+
+                img {
+                    width: 350px;
+
+                    @include laptop {
+                        width: 311px;
+                    }
+
+                    @include tablet {
+                        width: 300px;
+                    }
+
+                    @include mobile {
+                        width: 150px;
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+
+//////////////////////////////////////////////////////////////  
+.program {
+
+    // border: solid 1px blueviolet;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+
+    @include tablet {
+        margin-top: 28px;
+    }
+    @include mobile {
+        margin-top: 18px;
+    }
+
+    .conatainer {
+        display: flex;
+        justify-content: center;
+        width: 90vw;
+        // @include mobile {
+        //     width: 96vw;
+        // }
+
+        @include tablet {
+            flex-direction: column-reverse;
+        }
+
+        .left {
+            width: 65%;
+            margin-right: 10px;
+
+            @include tablet {
+                width: 100%;
+            }
+           
+
+
+            // background: #dfdfdf;
+            #banner1 {
+                background: rgb(0, 86, 186);
+                background: linear-gradient(90deg, rgba(0, 86, 186, 1) 31%, rgba(233, 29, 58, 1) 83%);
+                // margin-right: 10px;
+                padding: 20px 10px;
+                text-align: center;
+
+
+                h1 {
+                    color: white;
+                    font-size: 25px;
+
+                    @include tablet {
+                        font-size: 20px;
+                    }
+                    @include mobile {
+                        font-size: 18px;
+                    }
+                }
+            }
+
+            #banner2 {
+                background: rgb(252, 83, 17);
+                background: linear-gradient(90deg, rgba(252, 83, 17, 1) 0%, rgba(255, 205, 0, 1) 87%);
+                margin-right: 10px;
+                margin-top: 20px;
+                padding: 20px 0;
+                text-align: center;
+
+
+                h1 {
+                    color: black;
+                    font-size: 25px;
+                }
+            }
+
+
+        }
+
+        ////////////////////////////////right fromm
+        .right {
+            flex: 35%;
+            // background: rgb(226, 188, 244);
+            // border: solid 1px rgb(94, 94, 94);
+            position: relative;
+            border-radius: 10px;
+            height: fit-content;
+
+
+        }
+    }
+
+}

@@ -1,0 +1,346 @@
+@import '../../global.scss';
+
+.RightForm {
+    background: white;
+    border-radius: 10px;
+    border: solid 1px rgb(176, 176, 176);
+
+    @include laptop {
+        margin-bottom: 30px;
+    }
+
+    #form-heading {
+        background: #702fa0;
+        color: white;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10% 10% 85% 34% / 0% 0% 53% 47%;
+        height: 100px;
+
+        @include laptop {
+            border-radius: 10% 10% 85% 34% / 0% 0% 53% 47%;
+            height: 80px;
+        }
+
+        @include mobile {
+            border-radius: 10% 10% 85% 34% / 0% 0% 53% 47%;
+            height: 60px;
+        }
+
+
+        h1 {
+            text-align: center;
+
+            @include laptop {
+                font-size: 22px;
+            }
+
+            @include tablet {
+                font-size: 35px;
+
+            }
+
+            @include mobile {
+                font-size: 22px;
+            }
+        }
+
+        h4 {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: 500;
+
+            @include laptop {
+                font-size: 15px;
+            }
+
+            @include mobile {
+                font-size: 14px;
+            }
+        }
+
+        h5 {
+            text-align: center;
+            margin-top: 5px;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 5px 30px;
+
+            span {
+                color: rgb(17, 173, 59);
+            }
+        }
+    }
+
+
+
+
+
+    // form
+
+    // main form
+    form {
+        // background: #c699ed;
+        padding: 30px 40px;
+
+        @include laptop {
+            padding: 0px 10px;
+        }
+
+        @include tablet {
+            padding: 0px 100px;
+
+        }
+
+        @include tablet {
+            padding: 0px 20px;
+
+        }
+
+        #error_msg {
+            opacity: 0;
+        }
+
+        h3 {
+            color: rgb(40, 40, 40);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        input {
+            width: 80%;
+            height: 30px;
+            border-radius: 5px;
+            border: solid 1px rgb(134, 134, 134);
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 10px;
+            margin: 10px;
+
+            @include laptop {
+                height: 25px;
+            }
+
+            @include tablet {
+                height: 30px;
+            }
+
+            @include mobile {
+                height: 25px;
+            }
+
+        }
+
+        #name {
+            input {
+                width: 35%;
+
+
+            }
+        }
+
+        #dropdown {
+            display: flex;
+            width: 70%;
+            justify-content: space-around;
+            // border: solid 1px red;
+
+            @include laptop {
+                display: block;
+                margin-left: 10px;
+            }
+
+            @include tablet {
+                display: flex;
+                margin-left: 0px;
+            }
+
+            @include tablet {
+                width: 80%;
+                display: flex;
+                margin-left: 0px;
+                justify-content: space-around;
+
+            }
+
+            #Branch {
+
+                #branch {
+                    width: 150px;
+                    height: 42px;
+                    font-family: inherit;
+                    padding-left: 20px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    border-radius: 4px;
+                    border-width: 1px;
+                    border-color: #9095A0FF;
+                    outline: none;
+                    background: #ffffff;
+
+                    @include laptop {
+                        height: 35px;
+                        margin-bottom: 10px;
+                        margin-left: 5px;
+                        margin-top: 10px;
+
+                    }
+
+                    @include mobile {
+                        height: 35px;
+                        margin-bottom: 10px;
+                        margin-left: 5px;
+                        margin-top: 10px;
+                        width: 120px;
+
+
+                    }
+
+
+
+                }
+            }
+
+            #GateYear {
+
+                #gateYear {
+                    width: 104px;
+                    height: 42px;
+                    font-family: inherit;
+                    padding-left: 20px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    border-radius: 4px;
+                    border-width: 1px;
+                    border-color: #9095A0FF;
+                    outline: none;
+                    background: #ffffff;
+
+
+                    @include laptop {
+                        height: 35px;
+                        margin-bottom: 10px;
+                        margin-left: 5px;
+                        margin-top: 10px;
+
+                    }
+
+
+                }
+            }
+        }
+
+        #btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+
+            @include laptop {
+                margin-top: 10px;
+
+            }
+
+            button {
+                width: 200px;
+                height: 40px;
+                font-size: 18px;
+                font-weight: 600;
+                border-radius: 5px;
+                background: #5a158d;
+                color: white;
+                letter-spacing: 1px;
+                border: 1px white solid;
+
+
+                &:hover {
+                    background: #a03ae9;
+
+                }
+            }
+        }
+
+        h6 {
+            margin-top: 5px;
+            font-size: 15px;
+            color: red;
+            text-align: center;
+
+            @include laptop {
+                margin-top: 10px;
+            }
+
+            @include tablet {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+
+    // otp form
+
+    #OTP_form {
+        padding: 30px 40px;
+        text-align: center;
+
+        .otp_box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        input {
+            width: 10%;
+            height: 30px;
+            border-radius: 5px;
+            border: solid 1px rgb(134, 134, 134);
+            font-size: 18px;
+            font-weight: 500;
+            padding: 5px 10px;
+            margin: 10px;
+            text-align: center;
+
+            @include laptop {
+                padding: 0px;
+
+            }
+
+        }
+
+        #btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
+
+            button {
+                width: 200px;
+                height: 40px;
+                font-size: 18px;
+                font-weight: 600;
+                border-radius: 5px;
+                background: #813588;
+                color: white;
+                letter-spacing: 1px;
+                border: 1px white solid;
+            }
+        }
+    }
+
+
+    #success {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+            width: 150px;
+        }
+
+        h3 {
+            font-size: 30px;
+            margin-top: 20px;
+        }
+    }
+
+}

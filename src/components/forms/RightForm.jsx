@@ -189,7 +189,7 @@ export default function RightForm() {
 
 
     const data = { email, Gen_OTP }
-    const result = axios.post('http://localhost:8000/api/sndOTP', data, { withCredentials: true }).then((res) => {
+    const result = axios.post('https://landingpage77-backend.onrender.com/api/sndOTP', data, { withCredentials: true }).then((res) => {
       console.log(res.data);
       res.data.success === true ? setshowForm(false) : setshowForm(true);
     })
@@ -230,7 +230,7 @@ export default function RightForm() {
       const data = { Fname, Lname, email, contact, branch, GateYear }
 
 
-      const result = axios.post('http://localhost:8000/api/newUser', data, { withCredentials: true })
+      const result = axios.post('https://landingpage77-backend.onrender.com/api/newUser', data, { withCredentials: true })
         .then((res) => {
           console.log(res.data)
           setuser_added(res.data.success)

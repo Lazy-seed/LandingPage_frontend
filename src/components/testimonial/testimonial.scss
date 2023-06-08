@@ -21,6 +21,7 @@
                 list-style: none;
                 display: flex;
                 justify-content: center;
+                margin-top: 20px;
                 @include mobile {
                     flex-direction: column;
                     align-items: center;
@@ -37,8 +38,8 @@
                     
 
                     #img-div {
-                        width: 110px;
-                        height: 110px;
+                        width: 150px;
+                        height: 150px;
                         border-radius: 50%;
                         // border: solid 1px red;
                         overflow: hidden;

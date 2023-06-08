@@ -18,8 +18,8 @@ export default function Testimonial() {
               <div id="img-div">
                 <img src={p1} alt="" />
               </div>
-              <h4>TItle of the conatienr</h4>
-              <h3>Name ofme</h3>
+              <h4>I have crack gate </h4>
+              <h3>Riya Pandey</h3>
               <h5>GATE 2021</h5>
             </li>
 
@@ -27,17 +27,17 @@ export default function Testimonial() {
               <div id="img-div">
                 <img src={p2} alt="" />
               </div>
-              <h4>TItle of the conatienr</h4>
-              <h3>Name ofme</h3>
-              <h5>GATE 2021</h5>
+              <h4>Best for exam cracking</h4>
+              <h3>Omkar Sanap</h3>
+              <h5>GATE 2022</h5>
             </li>
 
             <li>
               <div id="img-div">
                 <img src={p4} alt="" />
               </div>
-              <h4>TItle of the conatienr</h4>
-              <h3>Name ofme</h3>
+              <h4>Got in top 100</h4>
+              <h3>Divya Rao</h3>
               <h5>GATE 2021</h5>
             </li>
 

@@ -229,7 +229,7 @@ export default function RightForm() {
 
 
     if (glob_otp === newTop) {
-      const data = { Fname, Lname, email, contact, branch, GateYear }
+      const data = { first_name:Fname, last_name:Lname, email, contact, branch, GateYear }
 
 
       const result = axios.post('https://landingpage77-backend.onrender.com/api/newUser', data, { withCredentials: true })

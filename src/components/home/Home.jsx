@@ -5,12 +5,15 @@ import assistent from './img/assistent.png';
 import RightForm from '../forms/RightForm';
 import Services from '../services/Services';
 import Testimonial from '../testimonial/Testimonial';
+import axios from 'axios';
 
 
 export default function Home() {
 
   const [showPop, setshowPop] = useState(true);
-
+  const [showpopForm, setshowpopForm] = useState(false);
+  const [Fname, setFname] = useState('')
+  const [email, setemail] = useState('')
 
   return (
 
@@ -18,7 +21,10 @@ export default function Home() {
       {
         showPop === true ?
           <div className="popup">
-            <div className="container">
+{/* show from or banner */}
+            (
+
+{showpopForm===false ?    <div className="container">
               <div className="wrapper">
                 <img src={assistent} alt="" />
                 <div id="popup_title">
@@ -27,10 +33,28 @@ export default function Home() {
                   <h3>GATE infinite brings you a program that offers Flexibility, quality teaching &amp;
                     access to top-notch resources.</h3>
                 </div>
-                <button id='talk-btn'>Talk to Our Counsellor</button>
+                <button id='talk-btn' onClick={() => setshowpopForm(true)}>Talk to Our Counsellor</button>
                 <button id='x-btn' onClick={() => setshowPop(false)}>X</button>
+              </div> 
+            </div> 
+            :
+            <div className="container2">
+              <div className="wrapper2">
+                <h1>Get an immediate assistance</h1>
+                <div id='name'>
+                  <h2>Name</h2>
+                  <input type="text" onChange={(e) => { setFname(e.target.value) }} id='F_email' />
+                </div>
+                <div id='email'>
+                  <h2>Email</h2>
+                  <input type="text" onChange={(e) => { setemail(e.target.value) }} id='I_email' />
+                </div>
+                <button id='talk-btn' onClick={() => { addUserDirect() }}>Sumbit</button>
+                <button id='x-btn' onClick={() => setshowpopForm(false)}>X</button>
               </div>
             </div>
+             } )
+          
           </div> :
           <></>
       }
@@ -40,7 +64,6 @@ export default function Home() {
       <div className='header'>
         <div className="wrapper">
           <div className="container">
-
             <div className="left">
               <h2>Unlock your potential.<br /> Ace the GATE 2025 with <span>Vidyalankar </span>
                 Infinite.</h2>
@@ -76,9 +99,6 @@ export default function Home() {
               <h1> Limited time offer! Claim your exclusive discount on total fees and GATE 2025 study planner.</h1>
             </div>
             <Services />
-            {/* <div id="banner2">
-              <h1>Get free GATE study plan (Note: 1 year study plan for 2025)</h1>
-            </div> */}
 
 
           </div>
@@ -90,8 +110,46 @@ export default function Home() {
         </div>
       </div>
 
+      <div id="banner2">
+        <h1>Get free GATE study plan (Note: 1 year study plan for 2025)</h1>
+      </div>
       <Testimonial />
 
     </>
   )
+
+
+
+
+  // 
+  function addUserDirect() {
+
+
+    // name 
+    if (Fname.trim() === '') {
+      document.getElementById('F_email').style = 'border:1px solid red';
+      document.getElementById('F_email').style.boxShadow = '0 0 5px red';
+      return false
+    }
+
+    // check mail
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if ((!(email.match(validRegex)) || email.trim() === '')) {
+      console.log("email not match");
+      document.getElementById('I_email').style = 'border:1px solid red';
+      document.getElementById('I_email').style.boxShadow = '0 0 5px red';
+      return false
+    }
+
+
+    const data = { first_name: Fname, email: email }
+    axios.post('https://landingpage77-backend.onrender.com/api/newUser', data, { withCredentials: true })
+      .then((res) => {
+        console.log(res.data)
+
+      })
+
+
+
+  }
 }

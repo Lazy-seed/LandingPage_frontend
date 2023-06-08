@@ -9,7 +9,7 @@ import Testimonial from '../testimonial/Testimonial';
 
 export default function Home() {
 
-  const [showPop, setshowPop] = useState(false);
+  const [showPop, setshowPop] = useState(true);
 
 
   return (

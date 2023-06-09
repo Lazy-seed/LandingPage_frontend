@@ -58,14 +58,12 @@ export default function RightForm() {
               <div id="Branch">
                 <h3>Branch  </h3>
                 <select name="branch" id='branch' onChange={(e) => { setbranch(e.target.value) }} >
-                  <optgroup label="MUMBAI">
-                    <option value="Dadar">Dadar</option>
-                    <option value="Dombivli" defaultValue>Dombivli</option>
-                  </optgroup>
-                  <optgroup label="PUNE">
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                  </optgroup>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Civil">Civil</option>
+                    <option value="Electrical" defaultValue>Electrical</option>
+                    <option value="Instrumentation" defaultValue>Instrumentation</option>
+                    <option value="CSE" defaultValue>CSE</option>
+                    <option value="ECE" defaultValue>ECE</option>
                 </select>
               </div>
               <div id="GateYear" onChange={(e) => { setGateYear(e.target.value) }}>

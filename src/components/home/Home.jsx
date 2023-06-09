@@ -99,12 +99,12 @@ export default function Home() {
         </div>
 
       </div>
-      {/* <div id="show_subtitle_onMobile">
+      <div id="show_subtitle_onMobile">
         <h4>Prepare for GATE the Infinite way &amp; get the AIR you
           deserve.
           With our expert guidance and proven teaching methodology, you can
           achieve remarkable results &amp; open doors to unlimited opportunities.</h4>
-      </div> */}
+      </div>
 
 
 

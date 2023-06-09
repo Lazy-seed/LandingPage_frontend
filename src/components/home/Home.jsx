@@ -10,7 +10,7 @@ import axios from 'axios';
 
 
 export default function Home() {
-
+  const [showlodaer, setshowlodaer] = useState(true)
   const [showPop, setshowPop] = useState(true);
   const [showpopForm, setshowpopForm] = useState(false);
   const [userAdd, setuserAdd] = useState(false);
@@ -41,11 +41,13 @@ export default function Home() {
             </div>
               :
               <div className="container2">
-
-
                 <div className="wrapper2">
 
-                  {userAdd === false ? <>
+                  {userAdd === false ? 
+                  
+        (showlodaer === true ? <div className="loader_div"><div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> </div> :
+                  
+                  <>
                     <h1>Get an immediate assistance</h1>
                     <div id='name'>
                       <h2>Name</h2>
@@ -57,13 +59,12 @@ export default function Home() {
                     </div>
                     <button id='talk-btn' onClick={() => { addUserDirect() }}>Sumbit</button>
                   </>
-
-                    : <>
+            ): <>
                       <h2>We will contact you asap!</h2>
                       <img src={success} alt="" />
                     </>}
 
-                  <button id='x-btn' onClick={() => {setshowpopForm(false); setshowPop(false)}}>X</button>
+                  <button id='x-btn' onClick={() => { setshowpopForm(false); setshowPop(false) }}>X</button>
 
                 </div>
 
@@ -157,12 +158,13 @@ export default function Home() {
       return false
     }
 
-
+    setshowlodaer(true)
     const data = { first_name: Fname, email: email }
     axios.post('https://landingpage77-backend.onrender.com/api/newUser', data, { withCredentials: true })
       .then((res) => {
         console.log(res.data)
         setuserAdd(res.data.success)
+        setshowlodaer(false);
 
       })
 

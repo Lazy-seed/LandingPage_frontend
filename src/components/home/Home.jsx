@@ -10,7 +10,7 @@ import axios from 'axios';
 
 
 export default function Home() {
-  const [showlodaer, setshowlodaer] = useState(true)
+  const [showlodaer, setshowlodaer] = useState(false)
   const [showPop, setshowPop] = useState(true);
   const [showpopForm, setshowpopForm] = useState(false);
   const [userAdd, setuserAdd] = useState(false);
